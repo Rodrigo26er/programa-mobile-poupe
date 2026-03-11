@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Programa Poupe</title>
+</head>
+<body>
+  <h1>Bem-vindo ao Programa Poupe</h1>
+  <button onclick="processar()">Enviar Panfleto</button>
+
+  <script>
+    function processar() {
+      fetch('/process', {method: 'POST'})
+        .then(res => res.json())
+        .then(data => alert(data.message));
+    }
+  </script>
+</body>
+</html>
